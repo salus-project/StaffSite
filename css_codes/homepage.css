@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  td{
+      padding: 10px;
+  }
+  .detail{
+    width: 550px;
+    height: 120px;
+    padding:5px;
+    margin:auto;
+
+}
