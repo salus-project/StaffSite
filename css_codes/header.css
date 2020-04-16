@@ -1,1 +1,63 @@
+.titlebar, .topnav{
+    display: block;
+}
+.titlebar{
+    overflow: hidden;
+    border-color: rgb(114, 114, 199);
+    background-color: rgb(167, 172, 248);
+}
+.coverphoto{
+ 
+    float: left;
+    display: block;
+    position: relative;
+    height:15px;
+    width:15px;
+    margin:auto;
+    border:3px solid black;
 
+  
+}
+.person_name{
+  margin-left: 10px;
+    position: relative;
+    line-height: 24px;
+    vertical-align: middle;
+    float: left;
+    display: block;
+    font-size: medium;
+}
+.logout{
+    align-content: flex-end;
+    border-radius: 8px;
+    margin: auto;
+    text-align: end;
+    padding: 8px;
+    width:25%;
+    margin-right: 0px;
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(51, 51, 51);
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a:active {
+    background-color: #4CAF50;
+    color: white;
+  }
