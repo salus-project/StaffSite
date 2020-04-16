@@ -1,9 +1,7 @@
-<?php  
-    session_start();
-    require 'dbconfi/confi.php';
+<?php
+session_start();
+require "header.php" 
 ?>
-
-<?php require "header.php" ?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +16,7 @@
             <h1> CREATE NEW EVENT </h1>
 
             <div class="div1">
-            <form  class="form_box" action="create_event.php" method="POST">
+            <form  class="form_box" action="create_event_php.php" method="POST">
 
                 <label class="label" style="font-weight:bolder;">Name </label><br>
                 <input name = "name" type="text" class="input_box" placeholder="Enter event name"/><br>
@@ -80,33 +78,3 @@
     </body>
 </html>
 
-<?php
-    if (isset($_POST['submit_button'])){
-        $name=$_POST['name'];
-        $type = $_POST['type'];
-        $affected_districts="not_selected";
-        if( ! empty( $_POST['district'] )){
-            $values = $_POST['district'];
-            $affected_districts = implode(",", $values);
-        }
-        $start_date = $_POST['start_date'];
-        $end_date = $_POST['end_date'];
-        $status = $_POST['status'];
-        $detail = $_POST['detail'];
-
-        if(!empty($_POST['end_date'])){
-            $query="INSERT INTO disaster_events(name, type, affected_districts, start_date,end_date, status, detail) VALUES ('$name','$type','$affected_districts','$start_date','$end_date','$status','$detail')";     
-        }else{
-            $query="INSERT INTO disaster_events(name, type, affected_districts, start_date, status, detail) VALUES ('$name','$type','$affected_districts','$start_date','$status','$detail')";     
-
-        }
-        $query_run= mysqli_query($con,$query);
-        if($query_run){
-            echo '<script type="text/javascript"> alert ("Data Uploaded") </script>';    
-        }
-        else{
-            echo '<script type="text/javascript"> alert ("Data not Uploaded") </script>';
-        }
-
-    }
-?>

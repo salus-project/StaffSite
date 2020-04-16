@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "header.php" 
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ session_start();
         </style>
     </head>
 <body>
-<?php require "header.php" ?>
+
 <ul>
   <li><button class="new_member"><a class="tag" href="form.php">Add new member</a></button></li>
  

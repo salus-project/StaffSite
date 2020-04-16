@@ -29,12 +29,13 @@
 
     $sql = "INSERT INTO civilian_detail (password, first_name, last_name, gender, NIC_num, address, district,village,street, Occupation, phone_num, email)
     VALUES ('$password', '$first_name', '$last_name', '$gender', '$nic', '$address', '$district', '$village','$street','$occupation', '$phone_number', '$email_address')";
+    $query_run= mysqli_query($conn,$sql);
 
-    if (!mysqli_query($conn,$sql)) {
-        echo "New record is not inserted";
-    } else {
-        echo "<h2>submited</h2>";
+    if($query_run ){
+        echo '<script type="text/javascript"> alert ("Data Uploaded") </script>';
+         header('location:member.php');
+    }else{
+        echo '<script type="text/javascript"> alert ("Data not Uploaded") </script>';
+
     }
-    header("refresh:2; url=member.php");
-    
 ?>

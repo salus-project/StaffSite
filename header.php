@@ -12,7 +12,7 @@
             <div class="coverphoto">
                 <img src="Profiles/199872641943.jpg" alt=<?php echo "Your profile picture";?> class="profile_pic">
             </div>
-            <div class person_name>
+            <div class ="person_name">
                 <h1><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?> </h1>
             </div>
 
