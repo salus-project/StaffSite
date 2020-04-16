@@ -8,8 +8,8 @@
 <body>
 
     <?php
-        $first_name = $last_name = $gender = $nic = $password = $address = $district = $occupation = $phone_number = $email_address = "";
-        $first_name_err = $last_name_err = $gender_err = $nic_err = $password_err = $address_err = $district_err = $occupation_err = $phone_number_err = $email_address_err = "";
+        $first_name = $last_name = $gender = $nic = $password = $address = $district=$village=$street = $occupation = $phone_number = $email_address = "";
+        $first_name_err = $last_name_err = $gender_err = $nic_err = $password_err = $address_err = $district_err = $village_err =$street_err= $occupation_err = $phone_number_err = $email_address_err = "";
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             if (empty($_POST["nic"])){
                 $nic_err = "NIC is required";
@@ -58,6 +58,20 @@
                 $district_err = "District is required";
             } else {
                 $district = test_input($_POST["district"]);
+            }
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            if (empty($_POST["village"])){
+                $village_err = "Village is required";
+            } else {
+                $village = test_input($_POST["village"]);
+            }
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            if (empty($_POST["street"])){
+                $street_err = "Street is required";
+            } else {
+                $street = test_input($_POST["street"]);
             }
         }
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -122,8 +136,43 @@
             <input type="text" id="address" name="address" placeholder="Enter address" value="<?php echo $address;?>" required>
             <span class="error">*<?php echo $address_err; ?></span><br><br>
             <label for="district">District</label>
-            <input type="text" id="district" name="district" placeholder="Enter district" value="<?php echo $district;?>" required>
+            <select id="district" name="district" >
+                <option value='Ampara'>Ampara</option>
+                <option value='Anurashapura'>Anurashapura</option>
+                <option value='Badulla'>Badulla</option>
+                <option value='Batticaloa'>Batticaloa</option>
+                <option value='Colombo'>Colombo</option>
+                <option value='Galle'>Galle</option>
+                <option value='Gampha'>Gampha</option>
+                <option value='Hambatota'>Hambantota</option>
+                <option value='Jaffna'>Jaffna</option>
+                <option value='Kaltura'>Kaltura</option>
+                <option value='Kandy'>Kandy</option>
+                <option value='Kegalle'>Kegalle</option>
+                <option value='Kilinochchi'>Kilinochchi</option>
+                <option value='Kurunegala'>Kurunegala</option>
+                <option value='Mannar'>Mannar</option>
+                <option value='Matale'>Matale</option>
+                <option value='Mathara'>Mathara</option>
+                <option value='Moneragala'>Moneragala</option>
+                <option value='Mullaitivu'></option>
+                <option value='Nuwara-Eliya'>Nuwara-Eliya</option>
+                <option value='Polonnaruwa'>Polonnaruwa</option>
+                <option value='Puttalam'>Puttalam</option>
+                <option value='Ratnapura'>Ratnapura</option>
+                <option value='Tricomalee'>Tricomalee</option>
+                <option value='Vavuniya'>Vavuniya</option>
+            </select>
             <span class="error">*<?php echo $district_err; ?></span><br><br>
+            
+            
+            <label for="village">Village</label>
+            <input type="text" id="village" name="village" placeholder="Enter village" value="<?php echo $village;?>" required>
+            <span class="error">*<?php echo $village_err; ?></span><br><br>
+            <label for="street">Street</label>
+            <input type="text" id="street" name="street" placeholder="Enter street" value="<?php echo $street;?>" required>
+            <span class="error">*<?php echo $street_err; ?></span><br><br>
+  
             <label for="occupation">Occupation</label>
             <input type="text" id="occupation" name="occupation" placeholder="occupation" value="<?php echo $occupation;?>"><br><br>
             <label id="phone_number">Phone number</label>

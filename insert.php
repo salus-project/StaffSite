@@ -21,12 +21,14 @@
     $nic = $_POST["nic"];
     $address = $_POST["address"]; 
     $district = $_POST["district"];
+    $village = $_POST["village"]; 
+    $street = $_POST["street"]; 
     $occupation = $_POST["occupation"];
     $phone_number = $_POST["phone_number"];
     $email_address = $_POST["email_address"];
 
-    $sql = "INSERT INTO civilian_detail (password, first_name, last_name, gender, NIC_num, address, district, Occupation, phone_num, email)
-    VALUES ('$password', '$first_name', '$last_name', '$gender', '$nic', '$address', '$district', '$occupation', '$phone_number', '$email_address')";
+    $sql = "INSERT INTO civilian_detail (password, first_name, last_name, gender, NIC_num, address, district,village,street, Occupation, phone_num, email)
+    VALUES ('$password', '$first_name', '$last_name', '$gender', '$nic', '$address', '$district', '$village','$street','$occupation', '$phone_number', '$email_address')";
 
     if (!mysqli_query($conn,$sql)) {
         echo "New record is not inserted";

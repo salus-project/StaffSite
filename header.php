@@ -8,6 +8,7 @@
     <body>
         
         <div class="titlebar">
+            
             <div class="coverphoto">
                 <img src="Profiles/199872641943.jpg" alt=<?php echo "Your profile picture";?> class="profile_pic">
             </div>
