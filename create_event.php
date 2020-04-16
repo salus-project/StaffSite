@@ -94,15 +94,10 @@
         $status = $_POST['status'];
         $detail = $_POST['detail'];
 
-        if(!isset($_POST['end_date'])){
-            $query="INSERT INTO disaster_events(name, type, affected_districts, start_date,end_date, status, detail) VALUES ('$name','$type','$affected_districts','$start_date','$end_date','$status','$detail')";     
-        }else{
-            $query="INSERT INTO disaster_events(name, type, affected_districts, start_date, status, detail) VALUES ('$name','$type','$affected_districts','$start_date','$status','$detail')";     
-
-        }
+echo $end_date;
+        $query="INSERT INTO disaster_events(name, type, affected_districts, start_date,status, detail) VALUES ('$name','$type','$affected_districts','$start_date','$status','$detail')";     
         $query_run= mysqli_query($con,$query);
         if($query_run){
-            header('location:event.php');
             echo '<script type="text/javascript"> alert ("Data Uploaded") </script>';    
         }
         else{
