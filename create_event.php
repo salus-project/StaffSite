@@ -56,8 +56,6 @@ require "header.php"
                 <label class="label" style="font-weight:bolder;">Start date </label><br>
                 <input name = "start_date" type="date" class="input_box" /><br>
                 
-                <label class="label" style="font-weight:bolder;">End date </label><br>
-                <input name = "end_date" type="date" class="input_box" /><br>
                 
                 <label class="label"  style="font-weight:bolder;">Status </label><br>
                 <select id="status" name="status" class="input_box">
