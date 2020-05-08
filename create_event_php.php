@@ -27,10 +27,10 @@
 
         if($query_run ){
 
-            $query1 = "CREATE TABLE `event_".$id."_volunteers`(NIC_num varchar(12),now varchar(5),service_district varchar(100),type varchar(20),money_or_goods varchar(20),amount int(10),things varchar(100),PRIMARY KEY (NIC_num))"; 
+            $query1 = "CREATE TABLE `event_".$id."_volunteers`(NIC_num varchar(12),now varchar(5) NOT NULL DEFAULT 'yes',service_district varchar(100),type varchar(20),money_or_goods varchar(20),amount int(10),things varchar(100),PRIMARY KEY (NIC_num))"; 
             $query1_run= mysqli_query($con,$query1);
 
-            $query2 = "CREATE TABLE `event_".$id."_help_requested`(NIC_num varchar(12),now varchar(5),district varchar(20),village varchar(100),street varchar(100),help_type varchar(20),money_discription text,good_discription text,PRIMARY KEY (NIC_num))"; 
+            $query2 = "CREATE TABLE `event_".$id."_help_requested`(NIC_num varchar(12),now varchar(5) NOT NULL DEFAULT 'yes',district varchar(20),village varchar(100),street varchar(100),help_type varchar(20),money_discription text,good_discription text,PRIMARY KEY (NIC_num))"; 
             $query2_run= mysqli_query($con,$query2);
 
 

@@ -16,6 +16,7 @@
             $query="select * from disaster_events where event_id =" . $_GET['event_id'];
             $result=($con->query($query))->fetch_assoc();
             $event_status=$result['status'];
+            $event_id=$result['event_id'];
             $status=explode(" ",$result['user_'.$_SESSION['user_nic']]);
 
             $org_query = "select * from organizations where leader = '" . $_SESSION['user_nic'] . "' OR co_leader = '" . $_SESSION['user_nic'] . "'";
@@ -37,8 +38,8 @@
             <?php
                 if($event_status==="active"){
                     echo "<div>";
-                        echo "<form action=close_event.php method=POST  >";
-                            echo "<button type='submit' name=close_event>Close</button>";
+                        echo "<form action=close_event.php method=GET>";
+                            echo "<button type='submit' name=close value=".$event_id.">Close</button>";
                         echo "</form>";
                     echo"</div>";
                 }
