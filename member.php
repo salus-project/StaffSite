@@ -36,7 +36,7 @@ require "header.php"
 <body>
 
 <ul>
-  <li><button class="new_member"><a class="tag" href="form.php">Add new member</a></button></li>
+  <li><button class="new_member"><a class="tag" href="form.php">Add new civilian</a></button></li>
  
 </ul>
 

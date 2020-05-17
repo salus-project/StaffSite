@@ -22,21 +22,18 @@
     $sql = "INSERT INTO civilian_detail (password, first_name, last_name, gender, NIC_num, address, district,village,street, Occupation, phone_num, email)
     VALUES ('$password', '$first_name', '$last_name', '$gender', '$nic', '$address', '$district', '$village','$street','$occupation', '$phone_number', '$email_address')";
     $query_run= mysqli_query($con,$sql);
-
-    if($query_run ){
-        
-        $query="ALTER TABLE disaster_events ADD COLUMN `user_".$nic."` varchar(50) NOT NULL DEFAULT 'not_set not_requested not_applied'";
-        $query_run= mysqli_query($con,$query);
-
-        $query1 = "CREATE TABLE `user_".$nic."` (Notification_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,Date date, Time time,Content text)"; 
-        $query1_run= mysqli_query($notification_DB,$query1);
-
        
+    $query1="ALTER TABLE disaster_events ADD COLUMN `user_".$nic."` varchar(50) NOT NULL DEFAULT 'not_set not_requested not_applied'";
+    $query1_run= mysqli_query($con,$query1);
 
-        echo '<script type="text/javascript"> alert ("Data Uploaded") </script>';
-         header('location:member.php');
+    $query2 = "CREATE TABLE `user_notif_ic_".$nic."` (Notification_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,Date date, Time time,Content text)"; 
+    $query2_run= mysqli_query($notification_DB,$query2);
+
+    if($query_run && $query_run && $query2_run){
+        header('location:member.php');
+        
     }else{
-        echo '<script type="text/javascript"> alert ("Data not Uploaded") </script>';
-
+        echo '<script type="text/javascript"> alert ("Data is not submited") </script>';
     }
+
 ?>
